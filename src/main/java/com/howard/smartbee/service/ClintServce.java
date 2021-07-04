@@ -53,6 +53,18 @@ public class ClintServce {
 		return savedClint.getId();
 	}
 	
+	public List<Long> batchCreate(final List<ClintVo> clintVos) {
+		List<Clint> clints = clintVos.stream()
+				.map(clintVo->wrapToClint(clintVo))
+				.collect(Collectors.toList());
+		List<Clint> savedClint = clintRepository
+				.saveAll(clints);
+		List<Long> result = savedClint.stream()
+				.map(clint->clint.getId())
+				.collect(Collectors.toList());
+		return result;
+	}
+	
 	public Long update(final UpdateClintVo updateClintVo) {
 		Optional<Clint> clintOptional = clintRepository
 				.findById(updateClintVo.getId());

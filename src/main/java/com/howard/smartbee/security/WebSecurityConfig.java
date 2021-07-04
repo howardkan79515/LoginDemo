@@ -45,6 +45,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .authorizeRequests()
         .antMatchers("/api/*/read").hasAnyAuthority("SUPERUSER", "OPERATOR", "MANAGER")
         .antMatchers("/api/*/create").hasAnyAuthority("SUPERUSER", "OPERATOR")
+        .antMatchers("/api/*/batchCreate").hasAnyAuthority("SUPERUSER", "OPERATOR")
         .antMatchers("/api/*/update").hasAnyAuthority("SUPERUSER", "MANAGER")
         .antMatchers("/api/*/delete").hasAnyAuthority("SUPERUSER", "MANAGER")
         .antMatchers("/login*").permitAll()

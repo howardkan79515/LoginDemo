@@ -30,8 +30,17 @@ public class ClintController {
 	@Autowired
 	private ClintServce clintServce;
 	
+	@PostMapping("/batchCreate")
+    public ResultVo<?> batchCreate(@Valid @RequestBody 
+    		final List<ClintVo> clintVos) {
+		List<Long> result = clintServce
+				.batchCreate(clintVos);
+		return ResultVo.genSuccessResult(result);	
+	}
+	
 	@PostMapping("/create")
-    public ResultVo<?> create(@Valid @RequestBody final ClintVo clintVo) {
+    public ResultVo<?> create(@Valid @RequestBody 
+    		final ClintVo clintVo) {
 		Long result = clintServce.create(clintVo);
 		return ResultVo.genSuccessResult(result);	
 	}
