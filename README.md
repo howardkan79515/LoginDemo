@@ -7,12 +7,12 @@
 
 3.功能包含 Company/Clint 模組 CRUD APIs。
 
-  *.實作例外處理
+    *.實作例外處理
   
-  *.單元測試 CompanyServiceTest
+    *.單元測試 CompanyServiceTest
   
-  *.使用 formLogin 登入 
+    *.使用 formLogin 登入 
   
-  *.InitDataConfig 創建 default 的 3 個 user,  
+    *.InitDataConfig 創建 default 的 3 個 user,  
   
-    root (SUPERUSER), business (MANAGER), user (OPERATOR)
+        root (SUPERUSER), business (MANAGER), user (OPERATOR)
