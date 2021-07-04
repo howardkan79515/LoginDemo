@@ -9,7 +9,7 @@
 
     *.實作例外處理
   
-    *.單元測試 CompanyServiceTest
+    *.單元測試 CompanyServiceTest,  ClintServiceTest
   
     *.使用 formLogin 登入 
   
